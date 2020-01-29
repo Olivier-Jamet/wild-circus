@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Gallerie index{% endblock %}
+
+{% block body %}
+    <h1>Gallerie index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for gallerie in galleries %}
+            <tr>
+                <td>{{ gallerie.id }}</td>
+                <td>{{ gallerie.image }}</td>
+                <td>
+                    <a href="{{ path('gallerie_show', {'id': gallerie.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

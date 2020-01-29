@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Artiste index{% endblock %}
+
+{% block body %}
+    <h1>Artiste index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Content</th>
+            <th>Image</th>
+            <th>Specialite</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for artiste in artistes %}
+            <tr>
+                <td>{{ artiste.id }}</td>
+                <td>{{ artiste.name }}</td>
+                <td>{{ artiste.content }}</td>
+                <td>{{ artiste.image }}</td>
+                <td>{{ artiste.specialite }}</td>
+                <td>
+                    <a href="{{ path('artiste_show', {'id': artiste.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

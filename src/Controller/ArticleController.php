@@ -9,24 +9,30 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use DateTime;
 
 /**
- * @Route("/article")
+ * @Route("/admin/article")
  */
 class ArticleController extends AbstractController
 {
     /**
      * @Route("/", name="article_index", methods={"GET"})
+     * @param ArticleRepository $articleRepository
+     * @return Response
      */
     public function index(ArticleRepository $articleRepository): Response
     {
-        return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+        $articles = $articleRepository->findBy([], ['date' => 'DESC']);
+        return $this->render('admin/article/index.html.twig', [
+            'articles' => $articles,
         ]);
     }
 
     /**
      * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -42,7 +48,7 @@ class ArticleController extends AbstractController
             return $this->redirectToRoute('article_index');
         }
 
-        return $this->render('article/new.html.twig', [
+        return $this->render('admin/article/new.html.twig', [
             'article' => $article,
             'form' => $form->createView(),
         ]);
@@ -50,16 +56,21 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_show", methods={"GET"})
+     * @param Article $article
+     * @return Response
      */
     public function show(Article $article): Response
     {
-        return $this->render('article/show.html.twig', [
+        return $this->render('admin/article/show.html.twig', [
             'article' => $article,
         ]);
     }
 
     /**
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Article $article
+     * @return Response
      */
     public function edit(Request $request, Article $article): Response
     {
@@ -72,7 +83,7 @@ class ArticleController extends AbstractController
             return $this->redirectToRoute('article_index');
         }
 
-        return $this->render('article/edit.html.twig', [
+        return $this->render('admin/article/edit.html.twig', [
             'article' => $article,
             'form' => $form->createView(),
         ]);
@@ -80,6 +91,9 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Article $article
+     * @return Response
      */
     public function delete(Request $request, Article $article): Response
     {
