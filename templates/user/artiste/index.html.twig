@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Content</th>
             <th>Image</th>
@@ -19,13 +18,12 @@
         <tbody>
         {% for artiste in artistes %}
             <tr>
-                <td>{{ artiste.id }}</td>
                 <td>{{ artiste.name }}</td>
                 <td>{{ artiste.content }}</td>
                 <td>{{ artiste.image }}</td>
                 <td>{{ artiste.specialite }}</td>
                 <td>
-                    <a href="{{ path('artiste_show', {'id': artiste.id}) }}">show</a>
+                    <a href="{{ path('user_artiste_show', {'id': artiste.id}) }}">Voir</a>
                 </td>
             </tr>
         {% else %}

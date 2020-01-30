@@ -19,8 +19,8 @@
                 <td>{{ gallerie.id }}</td>
                 <td>{{ gallerie.image }}</td>
                 <td>
-                    <a href="{{ path('gallerie_show', {'id': gallerie.id}) }}">show</a>
-                    <a href="{{ path('gallerie_edit', {'id': gallerie.id}) }}">edit</a>
+                    <a href="{{ path('admin_gallerie_show', {'id': gallerie.id}) }}">show</a>
+                    <a href="{{ path('admin_gallerie_edit', {'id': gallerie.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('gallerie_new') }}">Create new</a>
+    <a href="{{ path('admin_gallerie_new') }}">Create new</a>
 {% endblock %}

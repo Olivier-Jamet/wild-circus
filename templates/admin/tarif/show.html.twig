@@ -1,0 +1,38 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Tarif{% endblock %}
+
+{% block body %}
+    <h1>Tarif</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tarif.id }}</td>
+            </tr>
+            <tr>
+                <th>Adult</th>
+                <td>{{ tarif.adult }}</td>
+            </tr>
+            <tr>
+                <th>Adultprice</th>
+                <td>{{ tarif.adultprice }}</td>
+            </tr>
+            <tr>
+                <th>Chid</th>
+                <td>{{ tarif.chid }}</td>
+            </tr>
+            <tr>
+                <th>Childprice</th>
+                <td>{{ tarif.childprice }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_tarif_index') }}">back to list</a>
+
+    <a href="{{ path('admin_tarif_edit', {'id': tarif.id}) }}">edit</a>
+
+    {{ include('admin/tarif/_delete_form.html.twig') }}
+{% endblock %}

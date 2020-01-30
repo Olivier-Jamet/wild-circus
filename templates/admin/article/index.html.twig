@@ -19,10 +19,10 @@
                         </div>
                     </div>
                 </div>
-            </div
+            </div>
 
-                    <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                    <a href="{{ path('admin_article_show', {'id': article.id}) }}">show</a>
+                    <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
 
         {% else %}
             <div>
@@ -30,5 +30,5 @@
             </div>
         {% endfor %}
 
-    <a href="{{ path('article_new') }}">Create new</a>
+    <a href="{{ path('admin_article_new') }}">Create new</a>
 {% endblock %}

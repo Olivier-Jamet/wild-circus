@@ -17,7 +17,7 @@
                     <a class="dropdown-item" href="#">CLOWN</a>
                     <a class="dropdown-item" href="#">DOMPTEUR</a>
                     <a class="dropdown-item" href="#">JONGLEUR</a>
-                    <a class="dropdown-item" href="#">TOUS</a>
+                    <a class="dropdown-item" href="{{ path('artiste_index') }}">TOUS</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -29,14 +29,14 @@
                     <a class="dropdown-item" href="#">CLOWN</a>
                     <a class="dropdown-item" href="#">DOMPTEUR</a>
                     <a class="dropdown-item" href="#">JONGLEUR</a>
-                    <a class="dropdown-item" href="#">GENERALE</a>
+                    <a class="dropdown-item" href="{{ path('gallerie_index') }}">GENERALE</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('article_index') }}">BLOG</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">TARIFS</a>
+                <a class="nav-link" href="{{ path('tarif_index') }}">TARIFS</a>
             </li>
         </ul>
     </div>
