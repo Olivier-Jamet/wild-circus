@@ -1,24 +1,27 @@
 {% extends 'admin/index.html.twig' %}
 
-{% block title %}Gallerie index{% endblock %}
+{% block title %}Gallerie{% endblock %}
 
 {% block body %}
-    <h1>Gallerie index</h1>
+    <h1>Gallerie Photos</h1>
+
+    <a class="btn btn-secondary mb-1" href="{{ path('admin_gallerie_new') }}">Ajouter une nouvelle photo</a>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Image</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for gallerie in galleries %}
             <tr>
-                <td>{{ gallerie.image }}</td>
+                <td> <img src="{{ asset( '/build/'~gallerie.image ) }}" class="card-img"
+                          alt="Image d'un artiste"></td>
                 <td>
-                    <a href="{{ path('admin_gallerie_show', {'id': gallerie.id}) }}">show</a>
-                    <a href="{{ path('admin_gallerie_edit', {'id': gallerie.id}) }}">edit</a>
+                    <a class="btn btn-secondary mb-1" href="{{ path('admin_gallerie_show', {'id': gallerie.id}) }}">Voir</a>
+                    <a class="btn btn-secondary mb-1" href="{{ path('admin_gallerie_edit', {'id': gallerie.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -29,5 +32,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_gallerie_new') }}">Create new</a>
 {% endblock %}

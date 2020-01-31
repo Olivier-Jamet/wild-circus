@@ -4,27 +4,27 @@
 
 {% block body %}
     <section class="container">
-    <h1 class="h1-home">Tarifs</h1>
+        <h1 class="h1-home">Tarifs</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Adulte</th>
-            <th>Prix Adulte</th>
-            <th>Enfant</th>
-            <th>Prix Enfant</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for tarif in tarifs %}
+        <table class="table">
+            <thead>
             <tr>
-                <td>{{ tarif.adult }}</td>
-                <td>{{ tarif.adultprice }}</td>
-                <td>{{ tarif.chid }}</td>
-                <td>{{ tarif.childprice }}</td>
+                <th>Adulte</th>
+                <th>Prix Adulte</th>
+                <th>Enfant</th>
+                <th>Prix Enfant</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for tarif in tarifs %}
+                <tr>
+                    <td>{{ tarif.adult }}</td>
+                    <td>{{ tarif.adultprice }}</td>
+                    <td>{{ tarif.chid }}</td>
+                    <td>{{ tarif.childprice }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </section>
 {% endblock %}

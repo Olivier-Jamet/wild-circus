@@ -3,32 +3,33 @@
 {% block title %}Artiste{% endblock %}
 
 {% block body %}
-    <h1>Artiste</h1>
+    <section class="container">
+        <h1>Artiste</h1>
 
-    <table class="table">
-        <tbody>
-        <tr>
-            <td>{{ artiste.id }}</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>{{ artiste.name }}</td>
-        </tr>
-        <tr>
-            <th>Content</th>
-            <td>{{ artiste.content }}</td>
-        </tr>
-        <tr>
-            <th>Image</th>
-            <td>{{ artiste.image }}</td>
-        </tr>
-        <tr>
-            <th>Specialite</th>
-            <td>{{ artiste.specialite }}</td>
-        </tr>
-        </tbody>
-    </table>
+        <a class="btn btn-secondary mb-1" href="{{ path('artiste_index') }}">Retour</a>
 
-    <a href="{{ path('artiste_index') }}">back to list</a>
-
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ artiste.name }}</td>
+            </tr>
+            <tr>
+                <th>Spécialité</th>
+                <td>{{ artiste.specialite }}</td>
+            </tr>
+            <tr>
+                <th>A propos de l'artiste</th>
+                <td>{{ artiste.content }}</td>
+            </tr>
+            <tr>
+                <th>Photo(s)</th>
+                <td>
+                    <img src="{{ asset( '/build/'~artiste.image ) }}" class="card-img"
+                         alt="Image d'un artiste">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
 {% endblock %}

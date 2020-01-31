@@ -8,10 +8,6 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
                 <th>Title</th>
                 <td>{{ article.title }}</td>
             </tr>
@@ -30,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_article_index') }}">back to list</a>
+    <a class="btn btn-secondary mb-1" href="{{ path('admin_article_index') }}">Retour</a>
 
-    <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
+    <a class="btn btn-secondary mb-1" href="{{ path('admin_article_edit', {'id': article.id}) }}">Modifer</a>
 
     {{ include('admin/article/_delete_form.html.twig') }}
 {% endblock %}

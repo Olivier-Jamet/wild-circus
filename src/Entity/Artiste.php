@@ -32,6 +32,11 @@ class Artiste
     private $image;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Gallerie", mappedBy="artiste", orphanRemoval=true)
+     */
+    private $gallerie;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $specialite;
@@ -87,5 +92,14 @@ class Artiste
         $this->specialite = $specialite;
 
         return $this;
+    }
+
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
     }
 }

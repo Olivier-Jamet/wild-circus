@@ -3,29 +3,30 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+    <section class="container">
+        <h1>Article</h1>
 
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>Title</th>
-            <td>{{ article.title }}</td>
-        </tr>
-        <tr>
-            <th>Content</th>
-            <td>{{ article.content }}</td>
-        </tr>
-        <tr>
-            <th>Image</th>
-            <td>{{ article.image }}</td>
-        </tr>
-        <tr>
-            <th>Date</th>
-            <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Title</th>
+                <td>{{ article.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ article.image }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
-
+        <a class="btn btn-secondary mb-1" href="{{ path('article_index') }}">Retour</a>
+    </section>
 {% endblock %}

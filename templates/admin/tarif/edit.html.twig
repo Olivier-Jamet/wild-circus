@@ -1,13 +1,13 @@
 {% extends 'admin/index.html.twig' %}
 
-{% block title %}Edit Tarif{% endblock %}
+{% block title %}Modifier Tarif{% endblock %}
 
 {% block body %}
-    <h1>Edit Tarif</h1>
+    <h1>Modifier un Tarif</h1>
 
-    {{ include('admin/tarif/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('admin/tarif/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
-    <a href="{{ path('admin_tarif_index') }}">back to list</a>
+    <a class="btn btn-secondary mb-1" href="{{ path('admin_tarif_index') }}">Retour</a>
 
     {{ include('admin/tarif/_delete_form.html.twig') }}
 {% endblock %}

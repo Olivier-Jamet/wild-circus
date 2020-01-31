@@ -1,9 +1,11 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Gallerie{% endblock %}
+{% block title %}Gallerie Photo{% endblock %}
 
 {% block body %}
-    <h1>Gallerie</h1>
+    <h1>Album Photo {{ gallerie.artiste }}</h1>
+
+    <a class="btn btn-secondary mb-1" href="{{ path('gallerie_index') }}">Retour</a>
 
     <table class="table">
         <tbody>
@@ -14,6 +16,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('gallerie_index') }}">back to list</a>
+    <a class="btn btn-secondary mb-1" href="{{ path('gallerie_index') }}">Retour</a>
 
 {% endblock %}

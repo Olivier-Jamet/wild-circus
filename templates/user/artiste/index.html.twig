@@ -1,36 +1,41 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Artiste index{% endblock %}
+{% block title %}Artistes{% endblock %}
 
 {% block body %}
-    <h1>Artiste index</h1>
+    <section class="container">
+        <h1>Liste des Artistes</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Content</th>
-            <th>Image</th>
-            <th>Specialite</th>
-            <th>actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for artiste in artistes %}
+        <table class="table">
+            <thead>
             <tr>
-                <td>{{ artiste.name }}</td>
-                <td>{{ artiste.content }}</td>
-                <td>{{ artiste.image }}</td>
-                <td>{{ artiste.specialite }}</td>
-                <td>
-                    <a href="{{ path('user_artiste_show', {'id': artiste.id}) }}">Voir</a>
-                </td>
+                <th>Name</th>
+                <th>A propos de l'artiste</th>
+                <th>Image</th>
+                <th>Spécialité</th>
+                <th>Actions</th>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for artiste in artistes %}
+                <tr>
+                    <td>{{ artiste.name }}</td>
+                    <td>{{ artiste.content }}</td>
+                    <td>
+                        <img src="{{ asset( '/build/'~artiste.image ) }}" class="card-img"
+                             alt="Image d'un artiste">
+                    </td>
+                    <td>{{ artiste.specialite }}</td>
+                    <td>
+                        <a class="btn btn-secondary mb-1" href="{{ path('user_artiste_show', {'id': artiste.id}) }}">Voir</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
 {% endblock %}

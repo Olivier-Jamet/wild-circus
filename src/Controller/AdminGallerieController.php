@@ -17,6 +17,8 @@ class AdminGallerieController extends AbstractController
 {
     /**
      * @Route("/", name="admin_gallerie_index", methods={"GET"})
+     * @param GallerieRepository $gallerieRepository
+     * @return Response
      */
     public function index(GallerieRepository $gallerieRepository): Response
     {
@@ -27,6 +29,8 @@ class AdminGallerieController extends AbstractController
 
     /**
      * @Route("/new", name="admin_gallerie_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class AdminGallerieController extends AbstractController
 
     /**
      * @Route("/{id}", name="admin_gallerie_show", methods={"GET"})
+     * @param Gallerie $gallerie
+     * @return Response
      */
     public function show(Gallerie $gallerie): Response
     {
@@ -60,6 +66,9 @@ class AdminGallerieController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="admin_gallerie_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Gallerie $gallerie
+     * @return Response
      */
     public function edit(Request $request, Gallerie $gallerie): Response
     {
@@ -80,6 +89,9 @@ class AdminGallerieController extends AbstractController
 
     /**
      * @Route("/{id}", name="admin_gallerie_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Gallerie $gallerie
+     * @return Response
      */
     public function delete(Request $request, Gallerie $gallerie): Response
     {

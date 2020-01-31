@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Gallerie;
-use App\Form\GallerieType;
 use App\Repository\GallerieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,6 +15,8 @@ class GallerieController extends AbstractController
 {
     /**
      * @Route("/", name="gallerie_index", methods={"GET"})
+     * @param GallerieRepository $gallerieRepository
+     * @return Response
      */
     public function index(GallerieRepository $gallerieRepository): Response
     {
@@ -27,6 +27,8 @@ class GallerieController extends AbstractController
 
     /**
      * @Route("/{id}", name="user_gallerie_show", methods={"GET"})
+     * @param Gallerie $gallerie
+     * @return Response
      */
     public function show(Gallerie $gallerie): Response
     {
