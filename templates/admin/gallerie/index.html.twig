@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -16,7 +15,6 @@
         <tbody>
         {% for gallerie in galleries %}
             <tr>
-                <td>{{ gallerie.id }}</td>
                 <td>{{ gallerie.image }}</td>
                 <td>
                     <a href="{{ path('admin_gallerie_show', {'id': gallerie.id}) }}">show</a>

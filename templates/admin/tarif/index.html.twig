@@ -3,15 +3,14 @@
 {% block title %}Tarif index{% endblock %}
 
 {% block body %}
-    <h1>Tarif index</h1>
+    <h1>Tarifs</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Adult</th>
                 <th>Adultprice</th>
-                <th>Chid</th>
+                <th>Child</th>
                 <th>Childprice</th>
                 <th>actions</th>
             </tr>
@@ -19,7 +18,6 @@
         <tbody>
         {% for tarif in tarifs %}
             <tr>
-                <td>{{ tarif.id }}</td>
                 <td>{{ tarif.adult }}</td>
                 <td>{{ tarif.adultprice }}</td>
                 <td>{{ tarif.chid }}</td>

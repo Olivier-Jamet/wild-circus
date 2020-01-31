@@ -10,13 +10,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('build/image-1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('build/image-1.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{asset('build/image-2.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('build/image-2.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{asset('build/image-3.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('build/image-3.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -31,5 +31,71 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Wild  Circus</h1>
-{% endblock %}
+
+<section class="container">
+    <h1 class="h1-home">Wild Circus</h1>
+    <div>
+        <h2 class="h2-home">Petits et grands, embarquez pour le plus gigantesque,
+            chic et authentique des spectacles de cirque !</h2>
+    </div>
+
+
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{ asset( '/build/image-4.jpeg' ) }}" class="card-img"
+                     alt="Image">
+            </div>
+            <div class="col-md-8 text">
+                <div class="card-body textcard">
+                    <h2 class="card-title">Des numéros extraordinaires</h2>
+                    <p class="card-text">
+                        Petits et grands, embarquez pour le plus gigantesque, chic et authentique des spectacles de
+                        cirque !
+                        Sous le plus beau chapiteau de France, numéros irrésistibles et attractions monumentales vous
+                        feront tourner la tête et chavirer de bonheur.
+                        Entre exploits, magie et poésie, nos bêtes de cirque créent un embrasement d’émotions comme vous
+                        n’en vivrez nulle part ailleurs.
+                        N’attendez plus, rejoignez la fête et lancez-vous dans l’aventure !
+                        Plus que jamais, avec nous faites la différence !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-8 text">
+                <div class="card-body textcard">
+                    <h2 class="card-title">Un spectable fabuleux</h2>
+                    <p class="card-text">
+                        WILD-CIRCUS, UNE DES PRODUCTIONS LES PLUS APPRÉCIÉES DU CIRQUE, ARRIVE A ORLEANS DANS LE CADRE
+                        DE SA TOURNÉE ANNULLE,
+                        Orléans, le 31 janvier 2020 – Wild-Circus la production la plus féérique et extraordinaire du
+                        Cirque Orléanais. Le
+                        spectacle sera présenté à la Wild Code School, le 31 janvier 2020, pour 1 représentation
+                        seulement. Cette unique production,
+                        écrite et mise en scène par Oliver, sera présentée en grande première.
+                        Une parade festive imaginée par un clown. Alliant prouesses acrobatiques, comédie et jeu
+                        d’acteurs, plonge le spectateur
+                        dans un univers théâtral empreint de ludisme et de spontanéité, situé dans un espace étrange
+                        entre ciel et terre.
+                        Dans une ambiance de fête foraine, opposant le grand et le petit, le ridicule et le tragique, la
+                        magie de la perfection
+                        et le charme de l’imperfection, le spectacle fait appel à la force et à la fragilité du clown,
+                        mais aussi à sa sagesse et
+                        à sa tendresse, pour illustrer la part d’humanité en chacun de nous. Porté par des sonorités
+                        tantôt lyriques, tantôt cocasses,
+                        C'est une fête intemporelle où l’illusion chatouille la réalité.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset( '/build/image-5.jpeg' ) }}" class="card-img"
+                     alt="Image">
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

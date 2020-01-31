@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ path('home_index') }}">logo</a>
+    <a class="navbar-brand" href="{{ path('home_index') }}"><img src="{{ asset('build/Logo.png') }}" class="d-block w-100" alt="Logo wild circus"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,29 +8,23 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ path('home_index') }}">Accueil <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ARTISTE
-                </a>
+            <li class="nav-item btn-group">
+                <button type="button"><a href="{{ path('artiste_index')}}">ARTISTES</a></button>
+                <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ path('acrobate_index') }}">ACROBATE</a>
-                    <a class="dropdown-item" href="{{ path('clown_index') }}">CLOWN</a>
-                    <a class="dropdown-item" href="{{ path('dompteur_index') }}">DOMPTEUR</a>
-                    <a class="dropdown-item" href="{{ path('jongleur_index') }}">JONGLEUR</a>
-                    <a class="dropdown-item" href="{{ path('artiste_index') }}">TOUS</a>
+                    <a class="dropdown-item" href="{{ path('artiste_index', { 'category': 'acrobate'}) }}">ACROBATE</a>
+                    <a class="dropdown-item" href="{{ path('artiste_index', { 'category': 'clown'}) }}">CLOWN</a>
+                    <a class="dropdown-item" href="{{ path('artiste_index', { 'category': 'dompteur'}) }}">DOMPTEUR</a>
+                    <a class="dropdown-item" href="{{ path('artiste_index', { 'category': 'jongleur'}) }}">JONGLEUR</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('gallerie_index') }}" >
                     GALLERIE
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">ACROBATE</a>
-                    <a class="dropdown-item" href="#">CLOWN</a>
-                    <a class="dropdown-item" href="#">DOMPTEUR</a>
-                    <a class="dropdown-item" href="#">JONGLEUR</a>
-                    <a class="dropdown-item" href="{{ path('gallerie_index') }}">GENERALE</a>
-                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('article_index') }}">BLOG</a>

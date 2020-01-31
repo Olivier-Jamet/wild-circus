@@ -1,5 +1,17 @@
+@import "vars";
+@import "user/home/home.scss";
+@import "footer.scss";
 @import "~bootstrap/scss/bootstrap";
 
 body {
     background-color: lightgray;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.container {
+    align-content: center;
 }

@@ -3,12 +3,11 @@
 {% block title %}Artiste index{% endblock %}
 
 {% block body %}
-    <h1>Artiste index</h1>
+    <h1>Artistes</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
                 <th>Content</th>
                 <th>Image</th>
@@ -19,7 +18,6 @@
         <tbody>
         {% for artiste in artistes %}
             <tr>
-                <td>{{ artiste.id }}</td>
                 <td>{{ artiste.name }}</td>
                 <td>{{ artiste.content }}</td>
                 <td>{{ artiste.image }}</td>
